@@ -65,7 +65,7 @@ return [
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'foro_test'),
-            'username' => env('MYSQL_USERNAME', 'DB_USERNAME', 'forge'),
+            'username' => env('MYSQL_USER', 'DB_USERNAME', 'forge'),
             'password' => env('MYSQL_PASSWORD', 'DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
