@@ -1,8 +1,7 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Auth Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -10,12 +9,4 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
+Route::resource('post', 'PostController');

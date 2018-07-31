@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Post;
 class PostController extends Controller
 {
+    public function __construct()
+    {
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,10 +39,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $post = new Post($request->all());
-        auth()->user()->posts()->save($post);
-        return $post->title;
+        if(auth()->user()){
+            $post = new Post($request->all());
+            auth()->user()->posts()->save($post);
+            return $post->title;
+        }else{
+            return route('login');
+        }
     }
 
     /**
