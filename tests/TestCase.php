@@ -29,6 +29,9 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
     public function defaultUser()
     {
         
-        return $this->defaultUser = factory(App\User::class)->create();
+        return $this->defaultUser = factory(App\User::class)->create([
+            'name' => 'Ismael Lastre Alvarez',
+            'email' => 'ismaelfac1@gmail.com'
+        ]);
     }
 }
