@@ -1,9 +1,14 @@
-{!! Form::open(['method' => 'POST', 'route' => 'post.store']) !!}
 
+                        {!! Form::open(['method' => 'POST', 'route' => 'post.store']) !!}
 
-{!! Form::text('title','', ['class' => 'form-control', 'placeholder' => 'Esto es una pregunta']) !!}
+                            {!! Field::text('title') !!}
 
-{!! Form::textarea('content', '',['class' => 'form-control', 'placeholder' => 'Esto es el contenido']) !!}
-
-{!! Form::submit('publicar', ['class' => 'btn btn-success']) !!}
-{!! Form::close() !!}
+                            {!! Field::textarea('content') !!}
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        publicar
+                                    </button>
+                                </div>
+                            </div>
+                        {!! Form::close() !!}

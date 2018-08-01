@@ -39,22 +39,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        if(auth()->user()){
-            $post = new Post($request->all());
-            auth()->user()->posts()->save($post);
-            return $post->title;
-        }else{
-            return route('login');
-        }
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+        $post = new Post($request->all());
+        auth()->user()->posts()->save($post);
+        return "Post: ".$post->title;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\f  $f
+     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
-    public function show(f $f)
+    public function show(Request $request)
     {
         //
     }
@@ -65,7 +65,7 @@ class PostController extends Controller
      * @param  \App\f  $f
      * @return \Illuminate\Http\Response
      */
-    public function edit(f $f)
+    public function edit(Request $request)
     {
         //
     }

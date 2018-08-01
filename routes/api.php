@@ -15,5 +15,5 @@ use App\User;
 */
 
 Route::get('/user', function (Request $request) {
-    return $request->user()->name." ".$request->user()->email;
+    return ($request->user()->name ?? 'Guest')." ".$request->user()->email;
 })->middleware('auth:api');
