@@ -9,4 +9,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('post', 'PostController');
+// Posts
+Route::get('post/create', [
+    'uses' => 'CreatePostController@create',
+    'as' => 'post.create',
+]);
+Route::post('post/create', [
+    'uses' => 'CreatePostController@store',
+    'as' => 'post.store',
+]);
