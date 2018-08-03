@@ -10,9 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'post.index',
+    'uses' => 'PostController@index'
+]);
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('post/{post}', [
