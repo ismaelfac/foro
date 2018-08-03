@@ -9,7 +9,7 @@ class PostListTest extends FeatureTestCase
         ]);
         $this->visit('/')
             ->seeInElement('h1','Post')
-            ->see($post->title)
+            ->seeInElement('li',$post->title)
             ->click($post->title)
             ->seePageIs($post->url);
     }

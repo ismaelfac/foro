@@ -16,6 +16,6 @@ class CreatePostController extends Controller
         ]);
         $post = new Post($request->all());
         auth()->user()->posts()->save($post);
-        return "Post: ".$post->title;
+        return redirect(url('/'));
     }
 }

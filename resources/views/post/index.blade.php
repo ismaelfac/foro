@@ -11,9 +11,11 @@
 
                 <div class="panel-body">
                     <ul>
-                    @foreach ($posts as $post )
-                        <a href="{{ $post->url }}">{{ $post->title }}</a>
-                    @endforeach
+                            @foreach ($posts as $post )
+                            <li>
+                                <a href="{{ $post->url }}">{{ $post->title }}</a>
+                            </li>
+                            @endforeach
                     </ul>
                 </div>
             </div>
