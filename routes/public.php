@@ -15,3 +15,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+Route::get('post/{post}', [
+    'as' => 'post.show',
+    'uses' => 'PostController@show'
+])->where('post', '\d+');
