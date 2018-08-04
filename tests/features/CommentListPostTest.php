@@ -19,6 +19,7 @@ class CommentListPostTest extends FeatureTestCase
         //Then
             $this->visit($post->url)
                 ->seeInElement('h4','Comentarios del Post')
+                ->seeInElement('strong', $comments->created_at)
                 ->assertResponseStatus(200)
                 ->see($comments->comment);
     }

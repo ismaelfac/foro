@@ -29,7 +29,7 @@
         <h4>Comentarios del Post</h4>
         <ul class="list-group">
             @foreach ($comments as $comment )
-                <li class="list-group-item">{{ $comment->comment }}</li>
+                <li class="list-group-item">{{ $comment->comment }}<strong class="pull-right">{{ $comment->created_at}}</strong></li>
             @endforeach
         </ul
     </div>
