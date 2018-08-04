@@ -18,6 +18,7 @@
                             @endforeach
                     </ul>
                 </div>
+                {{ $posts->render()}}
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ class ShowPostTest extends FeatureTestCase
             'content' => 'Este es el contenido del post'
         ]);
         // When
-        $this->visit(route('post.show', $post))
+        $this->visit($post->url)
             ->seeInElement('h1', $post->title)
             ->see($post->content);
     }
@@ -23,10 +23,12 @@ class ShowPostTest extends FeatureTestCase
         $post = factory(App\Post::class)->create([
             'title' => 'Old Title'
         ]);
+        $user->posts()->save($post);
         $url = $post->url;
         $post->update(['title' => 'New title']);
         //Then
         $this->visit($url)
+             ->assertResponseOk()
             ->seePageIs($post->url);
         
     }
